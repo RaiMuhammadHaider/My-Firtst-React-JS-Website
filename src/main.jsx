@@ -9,7 +9,7 @@ import AboutUs from './Components/aboutUs/AboutUs';
 import ContactUs from './Components/contactUs/ContactUs';
 import Home from './Components/home/Home';
 import Footer from './Components/footer/Footer';
-import User from './Components/user/user';
+import User from './Components/user/User';
 import GitHub, { GithubLoaderInfo } from './Components/GitHub/GitHub';
 // const router = createBrowserRouter([
 //   {
