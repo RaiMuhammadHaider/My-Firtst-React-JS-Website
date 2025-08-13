@@ -1,110 +1,149 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="bg-gradient-to-t from-gray-100 to-white shadow-inner">
-        <div className="max-w-screen-xl mx-auto p-6 lg:py-10">
-          <div className="md:flex md:justify-between items-center">
-            <div className="mb-8 md:mb-0">
-              <Link to="/" className="flex items-center">
-                <img
-                  src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                  className="h-16"
-                  alt="Logo"
-                />
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 text-sm text-gray-600">
-              <div>
-                <h2 className="mb-4 font-bold text-gray-800 uppercase">Resources</h2>
-                <ul>
-                  <li className="mb-2">
-                    <Link to="/" className="hover:text-orange-700 transition">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/about" className="hover:text-orange-700 transition">
-                      About
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-4 font-bold text-gray-800 uppercase">Follow Us</h2>
-                <ul>
-                  <li className="mb-2">
-                    <a
-                      href="https://github.com/raimuhammadhaider"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:text-orange-700 transition"
-                    >
-                      GitHub
-                    </a>
-                  </li>
-                  <li>
-                    <Link to="https://github.com/raimuhammadhaider" className="hover:text-orange-700 transition">
-                      Discord
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-4 font-bold text-gray-800 uppercase">Legal</h2>
-                <ul>
-                  <li className="mb-2">
-                    <Link to="https://github.com/raimuhammadhaider" className="hover:text-orange-700 transition">
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="https://github.com/raimuhammadhaider" className="hover:text-orange-700 transition">
-                      Terms & Conditions
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <footer className="bg-gradient-to-t from-gray-100 to-white shadow-inner border-t border-gray-200">
+      <div className="max-w-screen-xl mx-auto p-6 lg:py-10">
+        
+        {/* Top Section */}
+        <div className="md:flex md:justify-between items-center">
+          
+          {/* Logo */}
+          <div className="mb-8 md:mb-0">
+            <Link to="/" className="flex items-center group">
+              <img
+                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+                className="h-16 transition-transform duration-300 group-hover:scale-105"
+                alt="Logo"
+              />
+            </Link>
           </div>
 
-          <hr className="my-6 border-gray-300" />
-
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <span className="text-sm text-gray-500">
-              © 2025{" "}
-              <a href="#" className="hover:underline text-orange-600">
-                Rai Muhammad Haider
-              </a>{" "}
-              . All Rights Reserved.
-            </span>
-
-            <div className="flex mt-4 sm:mt-0 space-x-4">
-              {/* Example social icon using heroicons */}
-              <a href="#" className="text-gray-500 hover:text-orange-600 transition">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12a10 10 0 1 0-11.55 9.95v-7.06h-2.4V12h2.4V9.77c0-2.38 1.42-3.7 3.6-3.7 1.04 0 2.13.18 2.13.18v2.34h-1.2c-1.18 0-1.55.73-1.55 1.48V12h2.64l-.42 2.89h-2.22v7.06A10 10 0 0 0 22 12z" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-orange-600 transition">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.05 9.05 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.5 0a4.48 4.48 0 0 0-4.37 5.48A12.94 12.94 0 0 1 1.64 1.15a4.48 4.48 0 0 0 1.39 6A4.38 4.38 0 0 1 .96 6v.06a4.48 4.48 0 0 0 3.6 4.4 4.5 4.5 0 0 1-2.01.08 4.48 4.48 0 0 0 4.2 3.12A9 9 0 0 1 0 19.54a12.85 12.85 0 0 0 6.95 2" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-orange-600 transition">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.04c-5.52 0-10 4.48-10 10a9.96 9.96 0 0 0 6.84 9.54c.5.1.66-.22.66-.48 0-.24-.01-1.04-.01-1.88-2.78.6-3.37-1.16-3.37-1.16a2.65 2.65 0 0 0-1.1-1.45c-.9-.62.07-.6.07-.6a2.11 2.11 0 0 1 1.54 1.04 2.15 2.15 0 0 0 2.93.84 2.13 2.13 0 0 1 .63-1.34c-2.22-.25-4.56-1.11-4.56-4.95a3.88 3.88 0 0 1 1.04-2.7 3.6 3.6 0 0 1 .1-2.66s.84-.27 2.75 1.02a9.42 9.42 0 0 1 5 0c1.9-1.3 2.74-1.02 2.74-1.02a3.6 3.6 0 0 1 .1 2.66 3.87 3.87 0 0 1 1.03 2.7c0 3.85-2.34 4.69-4.57 4.94a2.4 2.4 0 0 1 .68 1.85c0 1.34-.01 2.42-.01 2.75 0 .27.17.59.68.48A10 10 0 0 0 12 2.04Z" />
-                </svg>
-              </a>
+          {/* Links */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 text-sm text-gray-600">
+            
+            {/* Resources */}
+            <div>
+              <h2 className="mb-4 font-bold text-gray-800 uppercase tracking-wide">Resources</h2>
+              <ul>
+                <li className="mb-2">
+                  <Link to="/" className="hover:text-orange-700 transition">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="hover:text-orange-700 transition">
+                    About
+                  </Link>
+                </li>
+              </ul>
             </div>
+
+            {/* Follow Us */}
+            <div>
+              <h2 className="mb-4 font-bold text-gray-800 uppercase tracking-wide">Follow Me</h2>
+              <ul>
+                <li className="mb-2">
+                  <a
+                    href="https://github.com/RaiMuhammadHaider"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-orange-700 transition"
+                  >
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/raimuahmmadhaider/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-orange-700 transition"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h2 className="mb-4 font-bold text-gray-800 uppercase tracking-wide">Legal</h2>
+              <ul>
+                <li className="mb-2">
+                  <Link to="/privacy" className="hover:text-orange-700 transition">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms" className="hover:text-orange-700 transition">
+                    Terms & Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
-      </footer>
-    </>
-  )
-}
 
-export default Footer
+        {/* Divider */}
+        <hr className="my-6 border-gray-300" />
+
+        {/* Bottom Section */}
+        <div className="flex flex-col sm:flex-row justify-between items-center">
+          <span className="text-sm text-gray-500">
+            © 2025{" "}
+            <a href="https://github.com/RaiMuhammadHaider" className="hover:underline text-orange-600">
+              Rai Muhammad Haider
+            </a>{" "}
+            . All Rights Reserved.
+          </span>
+
+          {/* Social Icons */}
+          <div className="flex mt-4 sm:mt-0 space-x-4">
+            {/* GitHub Icon */}
+            <a
+              href="https://github.com/RaiMuhammadHaider"
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-full bg-gray-200 hover:bg-orange-600 hover:text-white transition"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.727-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.238 1.838 1.238 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.333-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.403c1.018.005 2.044.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.236 1.911 1.236 3.221 0 4.609-2.804 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .318.192.693.8.576C20.565 22.094 24 17.597 24 12.297 24 5.67 18.627.297 12 .297z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+
+            {/* LinkedIn Icon */}
+            <a
+              href="https://www.linkedin.com/in/raimuahmmadhaider/"
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-full bg-gray-200 hover:bg-orange-600 hover:text-white transition"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8.339 18.339H5.664V9.339h2.675v9zm-1.338-10.3c-.854 0-1.547-.693-1.547-1.547s.693-1.547 1.547-1.547c.854 0 1.547.693 1.547 1.547s-.693 1.547-1.547 1.547zM18.339 18.339h-2.675v-4.632c0-1.104-.021-2.526-1.539-2.526-1.541 0-1.777 1.204-1.777 2.448v4.71h-2.675V9.339h2.564v1.232h.036c.357-.675 1.229-1.387 2.529-1.387 2.704 0 3.203 1.779 3.203 4.092v5.063z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
