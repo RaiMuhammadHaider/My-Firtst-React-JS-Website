@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-// when we use react we get some thing from react same at is when we use react-router-dom it also give some thing 
-// in this condition we get get { Link , NavLink } Link is basically use for navigating from one to anOther it work like ancher a tag the difference is that ancher tag refresh the whole page but where as the link tag will only navigate it will never refresh the page  NavLink give us additional features 
+
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     return (
         <>
             <header className="shadow-md sticky z-50 top-0 bg-gradient-to-r from-orange-50 via-white to-orange-50">
                 <nav className="border-b border-gray-200 px-4 lg:px-6 py-4">
                     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                        
+                        {/* Logo */}
                         <Link to="/" className="flex items-center">
                             <img
                                 src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
@@ -16,6 +19,7 @@ const Header = () => {
                             />
                         </Link>
 
+                        {/* Right-side buttons */}
                         <div className="flex items-center lg:order-2 space-x-2">
                             <Link
                                 to="#"
@@ -29,10 +33,29 @@ const Header = () => {
                             >
                                 Get started
                             </Link>
+
+                            {/* Animated Hamburger Menu Button */}
+                            <button
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none"
+                            >
+                                <span
+                                    className={`block h-0.5 w-6 bg-gray-700 transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+                                ></span>
+                                <span
+                                    className={`block h-0.5 w-6 bg-gray-700 transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}
+                                ></span>
+                                <span
+                                    className={`block h-0.5 w-6 bg-gray-700 transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+                                ></span>
+                            </button>
                         </div>
 
-                        <div className="hidden lg:flex items-center w-full lg:w-auto lg:order-1">
-                            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
+                        {/* Navigation Menu with Animation */}
+                        <div
+                            className={`lg:flex lg:items-center lg:w-auto lg:order-1 w-full transition-all duration-500 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 lg:opacity-100'}`}
+                        >
+                            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-6 lg:mt-0 animate-fadeIn">
                                 <li>
                                     <NavLink
                                         to="/"
@@ -40,6 +63,7 @@ const Header = () => {
                                             `block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 transition 
                                              ${isActive ? 'text-orange-700 font-semibold' : 'text-gray-800 hover:text-orange-600'}`
                                         }
+                                        onClick={() => setIsMenuOpen(false)}
                                     >
                                         Home
                                     </NavLink>
@@ -51,6 +75,7 @@ const Header = () => {
                                             `block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 transition 
                                              ${isActive ? 'text-orange-700 font-semibold' : 'text-gray-800 hover:text-orange-600'}`
                                         }
+                                        onClick={() => setIsMenuOpen(false)}
                                     >
                                         About
                                     </NavLink>
@@ -62,6 +87,7 @@ const Header = () => {
                                             `block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 transition 
                                              ${isActive ? 'text-orange-700 font-semibold' : 'text-gray-800 hover:text-orange-600'}`
                                         }
+                                        onClick={() => setIsMenuOpen(false)}
                                     >
                                         Contact
                                     </NavLink>
@@ -73,6 +99,7 @@ const Header = () => {
                                             `block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 transition 
                                              ${isActive ? 'text-orange-700 font-semibold' : 'text-gray-800 hover:text-orange-600'}`
                                         }
+                                        onClick={() => setIsMenuOpen(false)}
                                     >
                                         GitHub
                                     </NavLink>
@@ -82,6 +109,23 @@ const Header = () => {
                     </div>
                 </nav>
             </header>
+
+            {/* Extra animation for fade-in effect */}
+            <style>
+                {`
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fadeIn li {
+                    animation: fadeIn 0.4s ease forwards;
+                }
+                .animate-fadeIn li:nth-child(1) { animation-delay: 0.05s; }
+                .animate-fadeIn li:nth-child(2) { animation-delay: 0.1s; }
+                .animate-fadeIn li:nth-child(3) { animation-delay: 0.15s; }
+                .animate-fadeIn li:nth-child(4) { animation-delay: 0.2s; }
+                `}
+            </style>
         </>
     )
 }
